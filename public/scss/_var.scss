@@ -1,0 +1,1195 @@
+//Variable//
+$columns: 12 ;
+$gutter: -15px ;
+$medium: 640px ;
+$large: 1024px ;
+
+
+$main_color: #637484;
+$border_color: #333333;
+$button_color: #009CDF;
+
+
+@mixin clearfix {
+  .clearfix::before{
+    content: '';
+    display: table;
+  }
+
+  .clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin boxs{
+  *{
+  box-sizing: border-box;
+  }
+}
+
+@mixin flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+@mixin container{
+    width: 100%;
+    margin: auto;
+    height: 100%;
+}
+
+@mixin container-fluid{
+  .container-fluid{
+    width: 100%;
+  }
+}
+
+@mixin fonts{
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300i,400');
+  body{
+    font-family: "Roboto", sans-serif;
+    margin:0;
+    font-size:16px;
+    //position: relative;
+    padding-bottom: 6rem;
+    height: 119vh;
+  }
+  html {
+    height: 1vh;
+  }
+}
+
+@mixin sidebar{
+  .sidenav{
+    //float:left;
+    background-color: $main_color;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .sidebar_buttons{
+    text-align: center;
+  }
+  .sidenav a:active {
+    background-color: #EEEEEE;
+  }
+
+  .sidenav ul {
+    margin: 0;
+    padding: 0;
+  }
+  .sidenav ul:after{
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+  .sidenav li {
+    display: inline;
+    padding: 10px 0px;
+  }
+
+  .sidenav li:hover{
+    background-color: #b3c2d1;
+    border-radius:5px;
+  }
+
+  .sidenav a{
+    color: #FFF;
+    display: inline-block;
+    font-weight: 400;
+    padding: 10px;
+    text-decoration: none;
+  }
+}
+
+@mixin navbar{
+
+  .header {
+    background: $main_color;
+    padding: 0px 16px;
+  }
+  .header:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+
+
+  .header .logo {
+    float: left;
+    line-height: 1.9;
+    padding: 10px 0px;
+  }
+  .header .logo a {
+    color: #FFF;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  #burger {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    //padding: 10px 0px;
+  }
+  #burger .bar {
+    background: #EEE;
+    display: block;
+    height: 3px;
+    margin-bottom: 4px;
+    width: 20px;
+  }
+
+  .nav-left {
+    float: left;
+    margin-left: 100px;
+    padding: 0;
+  }
+
+  .nav {
+    float: right;
+    margin: 0;
+    padding: 0;
+  }
+  .nav ul , .nav-left ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+  }
+  .nav ul:after , .nav-left ul:after{
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
+  .li-navbar {
+    float: left;
+    display: inline-block;
+    padding: 10px 0px;
+    cursor: pointer;
+  }
+  .nav a , .nav-left a{
+    color: #FFF;
+    display: inline-block;
+    font-weight: 400;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .li-navbar:hover {
+    background: #b3c2d1;
+    border-radius:5px;
+  }
+
+  .open {
+    display: block !important;
+  }
+  .active{
+    background-color:#009CDF;
+    border-radius:5px;
+  }
+
+
+  .logo{
+    float:left;
+  }
+
+
+  .container2{
+    float:right;
+    background-color: $main_color;
+    width:100%;
+  }
+
+  .icon{
+    display:none;
+  }
+
+
+  /* MEDIA QUERIES */
+  @media screen and (max-width: $medium) {
+    .header {
+      padding: 0;
+    }
+    .header .logo {
+      float: none;
+      text-align: center;
+    }
+
+    #burger {
+      display: block;
+    }
+
+    #sidebar{
+      display: block;
+    }
+
+    .nav {
+      float: left;
+      display: none;
+    }
+    .nav li {
+      display: block;
+      width: 50%;
+      /*border-bottom: 1px solid #000;*/
+      //text-align:center;
+      /*background-color:#313942;*/
+    }
+
+    .sidebar_buttons{
+      text-align: center;
+      //margin-top: 50%;
+    }
+
+    .sidebar{
+      float:left;
+      background-color: $main_color;
+      border-top: 2px solid $border_color;
+      border-bottom: 2px solid $border_color;
+      height: 70px;
+      bottom: 0;
+      position: relative;
+      display: table-cell;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .sidebar li {
+      display: inline-block;
+      padding: 10px 0px;
+    }
+
+  }
+}
+
+@mixin footer{
+  .footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    clear: left;
+    left: 0;
+    padding: 1rem;
+    background-color: #637484;
+    color:white;
+    text-align: center;
+
+  }
+}
+
+
+
+
+
+@mixin planing {
+  //PlanningController.class
+  #planning{
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  #planning td, #planning th{
+    //border-left: 2px solid #009CDF;
+  }
+
+  #planning tr{
+    padding: 5px;
+  }
+
+  #planning td:nth-child(even) {
+    background-color: rgba(189, 189, 189, 0.2);
+  }
+
+  .planning{
+    border-right: 2px solid #009CDF;
+  }
+
+  #planning th{
+    border: none;
+  }
+
+  .hairdresser1{
+    background-color: #F2994A;
+  }
+
+  .hairdresser2{
+    background-color: #2D9CDB;
+  }
+
+  .hairdresser3{
+    background-color: #27AE60;
+  }
+
+  .all {
+    background-color: #333333;
+    color: white;
+
+  }
+
+  .button{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    height: 30px;
+  }
+}
+
+
+@mixin rendezvous {
+  /* RENDEZ VOUS*/
+  $imgCoiffeur1 : "../img/hommecoiffure.jpg";
+
+  
+  #body-rdv {
+    //background-color: #FFFFFF;
+    background-image: url("../img/salon coiffure.jpeg");
+    //object-fit: cover;
+    //background-repeat: no-repeat;
+  }
+
+  #main-rdv {
+    background-color: white;
+    //border-radius: 5px;
+    //border: 2px solid #009CDF;
+    padding: 0 20px 100% 20px;
+    margin: 0 calc(8.33333% / 2) 0 calc(8.33333% / 2);
+    //margin-left: auto;
+    //margin-right: auto;
+    //margin-top: 15px;
+    //text-align: center;
+    //padding: 10px;
+  }
+
+  #title-rdv, li {
+    text-align: center;
+  }
+
+  .title-section-rdv {
+    font-size: 20px;
+    padding: 0;
+    margin: 0 0 15px 0;
+    width:100%;
+  }
+
+  input[type="checkbox"][id^="coiffeur"] {
+    display: none;
+  }
+
+  input[type="checkbox"][id^="coiffeur"] + label::before {
+    content: "";
+    display: inline-block;
+    width: 80px;  
+    height: 80px;
+    background-image: url($imgCoiffeur1);
+    background-size: cover;
+    border-radius: 12px;
+  }
+
+  #coiffeurTous + label::before {
+    background-image:linear-gradient(to top, #696969, rgba(219, 219, 219, 0));
+  }
+
+  label[for="coiffeurTous"]{
+    white-space: nowrap; /* interdiction de passer à la ligne */
+  }
+
+  label[for="coiffeurTous"] span{
+    font-size:20px;
+  }
+
+
+  input[type="checkbox"][id^="coiffeur"] + label::before {
+    opacity: 0.5;
+  }
+
+  input[type="checkbox"][id^="coiffeur"]:checked + label::before {
+    border: solid black 2px;
+    font-size: 10px;
+    opacity: 1;
+  }
+
+  label[for^="coiffeur"] {
+    position: relative;
+  }
+
+  section {
+    display: inline;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .liste_deroulante {
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: black;
+    font-size: 125%;
+    color: #B8B8B8;
+    height: 35px;
+    margin: 0 auto;
+  }
+
+  .btn-Valider {
+    background: $button_color;
+    color: white;
+    height: 35px;
+    margin-top: 15px;
+    border-radius:7px;
+  }
+
+  .nom-coiffeur {
+    position: absolute;
+    left: -1%;
+    top: -12px;
+    background-image: linear-gradient(to top, #696969, rgba(219, 219, 219, 0));
+    color:white;
+    width:97%;
+    height:137%;
+    border-radius: 0 0 12px 12px;
+  }
+
+  #choix-coiffeur li, #selection-date li {
+    margin: 0 8px 5px 8px;
+  }
+
+  #mois, #annee {
+    margin-left: 40px;
+  }
+
+  #jour, #heure {
+    margin: 0px;
+  }
+
+  #heure {
+    margin-top: 20px;
+  }
+
+  .liste-coiffeur li,.checkbox-heure-rdv li {
+    display: inline-block;
+  }
+
+  #choix-forfait a{
+    margin-top:10px;
+    text-decoration:none; 
+  } 
+
+  #choix-coiffeur,#choix-forfait  {
+    margin-top: 35px;
+  }
+
+  #selection-date {
+    margin-top: 25px
+  }
+
+  .date{
+    margin-left:0px;
+  }
+
+  .container.checkbox-heure-rdv {
+    display: none;
+  }
+
+}
+@mixin article {
+  
+  $imgArt1 : "../img/journal.jpeg";
+
+  
+  #body-art {
+    //background-color: #FFFFFF;
+    background-image: url("../img/salon coiffure.jpeg");
+    //object-fit: cover;
+    //background-repeat: no-repeat;
+  }
+
+  #main-art {
+    background-color: white;
+    //border-radius: 5px;
+    //border: 2px solid #009CDF;
+    padding: 0 20px 100% 20px;
+    margin: 0 calc(8.33333% / 2) 0 calc(8.33333% / 2);
+    //margin-left: auto;
+    //margin-right: auto;
+    //margin-top: 15px;
+    //text-align: center;
+    //padding: 10px;
+  }
+
+  #title-art, li {
+    text-align: center;
+  }
+
+  .title-section-art {
+    font-size: 20px;
+    padding: 0;
+    margin: 0 0 15px 0;
+    width:100%;
+  }
+
+  input[type="checkbox"][id^="art"] {
+    display: none;
+  }
+
+  input[type="checkbox"][id^="art"] + label::before {
+    content: "";
+    display: inline-block;
+    width: 80px;  
+    height: 80px;
+    background-image: url($imgArt1);
+    background-size: cover;
+    border-radius: 12px;
+  }
+
+  #artTous + label::before {
+    background-image:linear-gradient(to top, #696969, rgba(219, 219, 219, 0));
+  }
+
+  label[for="artTous"]{
+    white-space: nowrap; /* interdiction de passer à la ligne */
+  }
+
+  label[for="artTous"] span{
+    font-size:20px;
+  }
+
+
+  input[type="checkbox"][id^="art"] + label::before {
+    opacity: 0.5;
+  }
+
+  input[type="checkbox"][id^="art"]:checked + label::before {
+    border: solid black 2px;
+    font-size: 10px;
+    opacity: 1;
+  }
+
+  label[for^="art"] {
+    position: relative;
+  }
+
+  section {
+    display: inline;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .liste_deroulante {
+    border-style: none none solid none;
+    border-width: 2px;
+    border-color: black;
+    font-size: 125%;
+    color: #B8B8B8;
+    height: 35px;
+    margin: 0 auto;
+  }
+
+  .btn-Valider {
+    background: $button_color;
+    color: white;
+    height: 35px;
+    margin-top: 15px;
+    border-radius:7px;
+  }
+
+  .nom-art {
+    position: absolute;
+    left: -1%;
+    top: -12px;
+    background-image: linear-gradient(to top, #696969, rgba(219, 219, 219, 0));
+    color:white;
+    width:97%;
+    height:137%;
+    border-radius: 0 0 12px 12px;
+  }
+
+  #choix-art li, #selection-date li {
+    margin: 0 8px 5px 8px;
+  }
+
+   .liste-art li {
+    display: inline-block;
+  }
+  
+  #choix-art  {
+    margin-top: 35px;
+  }
+
+
+}
+
+@mixin genericClass{
+  .updateButton
+  {
+    background-color: #009cdf;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .deleteButton
+  {
+    background-color: #ff8566;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+
+@mixin responsive-rdv{ 
+  @media only screen and (min-width: 1024px) {
+    #title-rdv {
+    //font-size: 28px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .title-section-rdv {
+    font-size: 24px;
+    margin-bottom: 15px;
+    }
+
+    #main-rdv {
+    margin: 0 calc(8.33333% * 2) 0 calc(8.33333% * 2);
+      text-align: center;
+      margin-top: 45px;
+      //padding: 50px;
+      //margin-left: 25%;
+      //margin-right: 25%;
+    padding: 0 calc(8.5% / 2) calc(8.5% / 2);
+    }
+
+    #heure {
+    display: none;
+    }
+    
+    .container.checkbox-heure-rdv {
+    display: block;
+    width:40%;
+    }
+
+    input[type="checkbox"][id^="coiffeur"] + label::before {
+    width: 120px;
+    height: 120px;
+    }
+    
+    .nom-coiffeur {
+    font-weight: bold;
+    }
+    
+    .liste-heure-rdv{
+      display:none;
+    }
+    
+    input[type="checkbox"][id^="heure"] {
+      display: none;
+    }
+
+    input[type="checkbox"][id^="heure"] + label::before {
+      content: "";
+      display: inline-block;
+      width: 70px;
+      height: 35px;
+      background-color: #009CDF;
+      border-radius: 16px;
+      opacity: 0.5;
+
+    }
+
+    input[type="checkbox"][id^="heure"]:checked + label::before {
+      font-size: 10px;
+      opacity: 1;
+    }
+    
+    label[for^="heure"] {
+      position: relative;
+    }
+    
+    .heure{
+      position: absolute;
+      left: -5%;
+      top: -60%;
+      color:white;
+      width:100%;
+      font-weight: bold;
+    }
+    
+    .container.date {
+    width: 52%;
+    }
+  } 
+}
+
+@mixin forfaits{
+  /*Forfait*/
+  #main-forfait {
+    margin: 0 calc(8.33333% / 2) 0 calc(8.33333% / 2);
+    position:absolute;
+    background: white;
+    margin-top: 50px;
+    border-radius: 5px;
+    padding: 50px;
+  }
+
+  #title-forfait{
+    text-align: center;
+  }
+
+  .description,.prix{
+  width:50%;
+  margin:0 0 5px 0;
+  font-size:16px;
+  font-weight: normal;
+  }
+
+  .description{
+   text-align:left;
+  }
+
+  .prix{
+  text-align: right;
+  }
+
+  .duree{
+    font-style: italic;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color:grey;
+  }
+
+  .title-categorie{
+    margin: 10px 0 10% 0;
+    text-align: center;
+  }
+
+  .left-side div[class^="categorie"]:last-child hr{
+    display:none;
+  }
+
+}
+
+@mixin responsive-forfaits{
+  @media only screen and (min-width: 1024px) {
+    #main-forfait {
+      margin-left: calc(8.33333% * 2);
+    }
+
+    .right-side div[class^="categorie"]:last-child hr{
+      display:none;
+    }
+
+  }
+}
+
+@mixin userManager{
+
+  .form_register_admin{
+    background-color:white;
+    margin-top: 45px;
+    color:rgba(0, 0, 0, 0.3);
+  }
+
+  .userManagerTab {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .tab-admin{
+    overflow-x: auto;
+  }
+
+  .page{
+    color: $main_color;
+  }
+
+  .userManagerTab tr:nth-child(even) {
+    background-color: rgba(189, 189, 189, 0.2);
+  }
+
+  th{
+    color: $main_color;
+  }
+
+  .previous a, .next-admin a{
+    text-decoration: none;
+    color: $main_color;
+  }
+
+  #civilite{
+    padding:10px;
+  }
+  #nom{
+    padding:10px;
+  }
+  #email{
+    padding:10px;
+  }
+  #tel{
+    padding:10px;
+  }
+  #status{
+    padding:10px;
+  }
+  td{
+    text-align: center;
+    padding:10px;
+  }
+}
+
+@mixin login{
+  hr{
+    background: rgba(0, 0, 0, 0.1);
+    margin-bottom:30px;
+    margin-top: 30px;
+  }
+
+  .span
+  {
+    color: $main_color;
+
+  }
+
+  .input{
+    border-radius:5px;
+    padding:10px;
+    border-color:rgba(0, 0, 0, 0.1);
+    color: black;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+
+  }
+
+  #connecter{
+    background-color:$button_color;
+    color:white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 70%;
+  }
+
+  .mdp{
+    margin-bottom: 20px;
+    text-decoration: none;
+
+  }
+
+  h3{
+    margin-top:0;
+    margin-bottom: 30px;
+    color:#637484;
+  }
+
+  .form_register{
+    background-color:white;
+    margin-top: 45px;
+    padding: 40px;
+    border-radius: 5px;
+    color:rgba(0, 0, 0, 0.3);
+  }
+
+  .mail{
+    margin-bottom: 20px;
+  }
+}
+
+@mixin signin{
+  #checkBox{
+    display: inline-block;
+    width:auto;
+  }
+
+
+  #valider{
+    background-color:#2F80ED;
+    color:white;
+    margin-top: 30px;
+    font-size: 16px;
+    width: 70%;
+  }
+
+
+  .select-sign-in{
+    border-radius:5px;
+    padding:10px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    color: black;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    -webkit-appearance: textfield;
+
+
+  }
+
+  .default_civilite{
+    color:rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+  }
+
+  .input_sign-in{
+    margin-bottom: 20px;
+  }
+
+  .offre_promo{
+    margin-bottom: 30px;
+  }
+
+
+  .justify{
+    text-align: justify;
+  }
+}
+
+@mixin contentPackageAdmin {
+  //Administration des forfaits
+  .createCategoryPackage {
+    width: 100%;
+  }
+
+  .btnCreatePackage {
+    background-color: #009CDF;
+    color: white;
+    height: 45px;
+    width: 100%; }
+
+  .buttonUpdatePackage {
+    width: 40%;
+    background-color: #B8B8B8; }
+
+  .PackageTab {
+    width: 100%;
+    margin-top: 40px;
+    padding:5px;}
+
+  .PackageTab tr:nth-child(even) {
+    background-color: rgba(189, 189, 189, 0.2); }
+
+  .packageCategory-title {
+    font-size: 20px;
+    color: #637484;
+
+    padding-bottom: 10px; }
+
+  .btnCreatePackage {
+    width: 100%; }
+
+  [class^="createPackage"] {
+    border-radius:5px;
+    background-color: #009CDF;
+    text-decoration:none;
+    color: white;
+    width: 100%;
+    padding: 5px 45px;
+    height: 30px; }
+
+  /*  Pop up d'ajout */
+  #packageForm,#categoryPackageForm,#updateCategoryPackageForm,#updatePackageForm  {
+    width: 100%;
+    height: 100%;
+    opacity: .95;
+    top: 0;
+    left: 0;
+    display: none;
+    position: fixed;
+    background-color: #313131;
+    overflow: auto; }
+
+  div#popUpForm {
+    position: absolute;
+    left: 63%;
+    top: 30%;
+    margin-left: -202px; }
+
+  .packageAdmin-title {
+    font-size: 22px ;
+  }
+
+  .formPackage {
+    max-width: 320px;
+    min-width: 250px;
+    padding: 0px 35px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #fff; }
+
+  .formPackage>h2 {
+    background-color: #B8B8B8;
+    padding: 20px 2px;
+    margin: -20px -36px;
+    text-align: center;
+    border-radius: 10px 10px 0 0; }
+
+  .formPackage>hr {
+    margin: 20px -36px;
+    border: 0;
+    border-top: 1px solid #ccc; }
+
+  .formPackage>input[type=text] {
+    padding-left: 5px;
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px; }
+
+  #category {
+    background-repeat: no-repeat;
+    background-position: 5px 7px; }
+
+  input[type=submit].btnFormCategory {
+    margin-bottom: 1%;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    background-color: #009CDF;
+    color: #fff;
+    padding: 5px 0;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px; }
+
+  #popUpForm {
+    position: absolute;
+    left: 55%;
+    top: 30%;
+    margin-left: -202px; }
+
+  [id^="tablePackage"]{
+    font-size:12px;
+  }
+
+  .packageCategory-title{
+    background-color: #F2F2F2;
+  }
+
+
+  /* Toggle button */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {display:none;}
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #009cdf;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #009cdf;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+
+  @media only screen and (min-width: 1024px) {
+    [class^="createPackage"] {
+      padding: 5px 150px;
+      background-color: #009CDF;
+      color: white;}
+
+    .createCategoryPackage {
+      width: 100%; }
+
+    .btnCreatePackage {
+      width: 185px; }
+
+    .PackageTab {
+      margin-left: 20px;
+      width: 48%; }
+
+    .buttonUpdatePackage {
+      width: 20%; }
+
+    .categoryTitle{
+      margin:0;
+    }
+
+    .packageAdmin-title {
+      font-size: 28px ;
+    }
+
+    .formPackage {
+      width: 100%; }
+
+
+    .categoryTitle{
+      margin:10px 0 0 0;
+    }
+
+    [id^="tablePackage"]{
+      font-size:16px;
+    }
+  }
+}
+
+
+@mixin title{
+  font-family: "Roboto";
+  font-style: italic;
+  line-height: normal;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #000000;
+  text-align:center;
+}
+
